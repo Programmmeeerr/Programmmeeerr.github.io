@@ -1,6 +1,6 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>404 Not Found</title><script>
 
-  if (location.href.slice(-1) == '/')
+  if (location.href.slice(-1) == '/' || location.href.slice(-5) == "index")
   {
     location.href = location.href.replace(/[\/]+$/, "").replace(/index$/, "");
   }
