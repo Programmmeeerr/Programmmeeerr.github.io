@@ -1,19 +1,11 @@
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>404 Not Found</title><script>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>404 Not Found</title><script id="path_change"></script><script>
 
-  var path = location.href;
-  if (path.slice(-1) == '/')
+  var path = "";
+  for (var i=0;i<window.location.pathname.replace(/^[\/]/,"").split(/[]*\//).length;i++)
   {
-    path = path.replace(/[\/]+$/, "");
+    path+="/..";
   }
-
-  var path2 = window.location.pathname.split("/");
-  if (path2[path2.length-1] == "index")
-  {
-    path = path.replace(/index$/, "");
-    console.log("test");
-  }
-
-  location.href = path;
+  document.getElementById("path_change").src=path+"/js/path_change.js"
 
   /*
    * Config
@@ -36,11 +28,6 @@
   if (permalink = path_name.match(match_condition))
   {
     location.href = path_name.replace(permalink, '') + redirect_file_name + '?' + parameter_key + '=' + permalink[0].replace(/post\//, '');
-  }
-  var path = "";
-  for (var i=0;i<window.location.pathname.replace(/^[\/]/,"").split(/[]*\//).length;i++)
-  {
-    path+="/..";
   }
   document.getElementById("budoux-ja-script").src=path+"/js/budoux-ja.min.js";
 
