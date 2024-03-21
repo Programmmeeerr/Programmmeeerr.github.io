@@ -9,6 +9,7 @@
   var path_ = window.location.pathname.split("/");
   if (path_[path_.length-1] == "index")
     path = path.replace(/index$/, "");
+  location.href = path;
 
   /*
    * Config
