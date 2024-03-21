@@ -1,9 +1,14 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>404 Not Found</title><script>
 
-  if (location.href.slice(-1) == '/' || location.href.slice(-5) == "index")
+  var path = location.href;
+  if (path.slice(-1) == '/')
   {
-    location.href = location.href.replace(/[\/]+$/, "").replace(/index$/, "");
+    path = path.replace(/[\/]+$/, "");
   }
+
+  var path_ = window.location.pathname.split("/");
+  if (path_[path_.length-1] == "index")
+    path = path.replace(/index$/, "");
 
   /*
    * Config
