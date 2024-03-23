@@ -1,6 +1,6 @@
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>404 Not Found</title><script id="path_change"></script><script>
 
-  var path = "";
+  var path = location.pathname;
   for (var i=0;i<window.location.pathname.replace(/^[\/]/,"").split(/[]*\//).length;i++)
   {
     path+="/..";
